@@ -1,0 +1,10 @@
+<h1>Bookmarks#edit</h1>
+<p>Find me in app/views/bookmarks/edit.html.erb</p>
+<%= form_for [@bookmark.topic, @bookmark] do |b| %>
+  <div class="form-group">
+  <%= b.label :url %>
+    <%= b.text_field :url, class: 'form-control', placeholder: 'bookmark url' %>
+  </div>
+
+  <%= b.submit "save", class: 'btn btn-success' %>
+  <% end %>
