@@ -1,0 +1,4 @@
+<% @topics.each do |topic| %>
+<h1><%= link_to topic.title, topic %></h1>
+<% end %>
+<%= link_to "Add Topic", new_topic_path, class: 'btn btn-success'%>

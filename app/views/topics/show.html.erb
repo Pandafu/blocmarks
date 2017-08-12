@@ -1,0 +1,11 @@
+<h1><%= @topic.title %></h1>
+<div class="row">
+  <% @topic.bookmarks.each do |bookmark| %>
+  <div class="col-md-3 col-xs-6">
+    <%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %>
+    <%= link_to "edit", edit_topic_bookmark_path(@topic, bookmark) %>
+  </div>
+  <% end %>
+  <%= link_to "New Bookmark", new_topic_bookmark_path(@topic) %>
+</div>
+<%= link_to "Delete Topic", @topic, method: :delete, class: 'btn btn-danger', data: {confirm: 'Sure?'} %>
