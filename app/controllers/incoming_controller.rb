@@ -23,7 +23,7 @@ class IncomingController < ApplicationController
     def create_topic
       @dbTopic = @user.topics.create(:title => @subject)
         if @dbTopic.save
-          create_bookmark(@url)
+          create_bookmark
         else
           puts "Topic not created"
           #TopicMailer.error(@user, @dbTopic).deliver
