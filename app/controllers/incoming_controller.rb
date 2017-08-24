@@ -13,7 +13,7 @@ class IncomingController < ApplicationController
   # Assign the url to a variable after retreiving it from params["body-plain"]
     @sender = params[:sender]
     @user = User.find_by_email(@sender)
-    @title = params[:subject]
+    @subject = params[:subject]
     @dbTopic = @user.topics.where(:title => @subject).first
     @url = params["body-plain"]
 
