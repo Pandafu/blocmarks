@@ -44,17 +44,17 @@ class IncomingController < ApplicationController
     if @user != nil
       if @dbTopic != nil
         puts "topic exists"
-        create_bookmark(@url)
+        create_bookmark
       else
         puts "topic doesn't exist"
-        create_topic(@dbTopic, @url)
+        create_topic
       end
     else
       @randomPassword = Devise.friendly_token.first(8)
       @user = User.create!(:email => @sender, :password => @randomPassword)
       if @user.save
         puts "user created"
-        create_topic(@dbTopic, @url)
+        create_topic
       else
         puts "usermailer not created"
         #UserMailer.error(@user).deliver
