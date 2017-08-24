@@ -20,7 +20,7 @@ class IncomingController < ApplicationController
 # Check if user is nil, if so, create and save a new user
 # Check if the topic is nil, if so, create and save a new topic
 # Now that you're sure you have a valid user and topic, build and save a new bookmark
-    def create_topic(@dbTopic, @url)
+    def create_topic
       @dbTopic = @user.topics.create(:title => @subject)
         if @dbTopic.save
           create_bookmark(@url)
@@ -30,7 +30,7 @@ class IncomingController < ApplicationController
         end
       end
 
-      def create_bookmark(@url)
+      def create_bookmark
         @bookmark = @dbTopic.bookmarks.create(:url => @url)
         if @bookmark.save
           puts "bookmark created"
