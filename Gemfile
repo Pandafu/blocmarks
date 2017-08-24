@@ -9,7 +9,7 @@ source 'https://rubygems.org'
  end
 
  group :development do
-   gem 'sqlite3'
+   gem 'pg'
    gem 'web-console', '~> 2.0'
  end
 
