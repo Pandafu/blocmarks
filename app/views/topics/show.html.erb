@@ -5,6 +5,7 @@
   <div class="col-md-3 col-xs-6">
     <%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %>
     <%= link_to "edit", edit_topic_bookmark_path(@topic, bookmark) %>
+
   </div>
   <% end %>
   <%= link_to "New Bookmark", new_topic_bookmark_path(@topic) %>
